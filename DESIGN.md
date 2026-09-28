@@ -2,13 +2,13 @@
 
 > Rustig zelfvertrouwen: een site die voelt als een goed gesprek met iemand die precies weet waar hij het over heeft.
 
-Stijlgids voor de site van Thijs van Geenen – *de excellente dienstverlener*. Alle pagina's (`index.html`, `over-thijs/`, `aanpak/`, `contact/`) volgen deze regels. Nieuwe onderdelen eerst hier toetsen.
+Stijlgids voor de site van Thijs van Geenen, *de excellente dienstverlener*. Alle pagina's (`index.html`, `over-thijs/`, `aanpak/`, `contact/`, `privacy/`) volgen deze regels. Nieuwe onderdelen eerst hier toetsen.
 
 ## 1. Visual Theme & Atmosphere
 
 **Style**: Warm Editorial Premium (mix van *Cream Editorial* voor kleur en typografie, *Warm Professional* voor dynamiek)
 **Keywords**: warm, nuchter, betrouwbaar, redactioneel, ruim, vakmanschap, menselijk
-**Tone**: zelfverzekerd en persoonlijk — NOT corporate, NOT flitsend, NOT startup-achtig
+**Tone**: zelfverzekerd en persoonlijk; NOT corporate, NOT flitsend, NOT startup-achtig, NOT sjabloon
 **Feel**: Een linnen notitieboek met een vulpen erop, op de tafel van een Brabantse boardroom.
 
 **Interaction Tier**: L2 Vloeiende interactie (scroll-reveals, navigatiestatus, parallax, spotlight-hover)
@@ -84,19 +84,19 @@ Stijlgids voor de site van Thijs van Geenen – *de excellente dienstverlener*. 
 | H3 | Fraunces | 1.5rem | 450 | 1.2 | -0.01em |
 | Body | DM Sans | 1.0625rem | 400 | 1.7 | — |
 | Lead | DM Sans | 1.25rem | 400 | 1.6 | — |
-| Label / Eyebrow | DM Sans | 0.78rem | 600 | 1.4 | 0.16em (uppercase) |
+| Label / Eyebrow | DM Sans | 0.98rem | 600 | 1.4 | normaal, gewone zinsopbouw (geen hoofdletters) |
 | Grote cijfers | Fraunces italic | 5–7rem | 300 | 1 | -0.04em |
 
 **Typography Rules:**
 - Koppen licht (300–450) en groot: luxe komt van schaal en lucht, niet van vet.
-- Kernwoorden in koppen in *Fraunces italic* met `--accent` (`<em>`); max. één `<em>` per kop.
+- Eén cursief koperen kernwoord (`<em>`) per pagina, alleen in de H1. Sectiekoppen (H2) blijven recht. Op home heeft het citaat daarnaast één accent.
 - Lopende tekst max. 65 tekens breed (`max-width: 36rem`).
 - **NEVER use**: Inter, Roboto, Arial, Poppins, Montserrat, Comic Sans; geen tweede serif.
 
 **Text Decoration** (uit `text-decoration-rules.md`, stijl = warm/redactioneel):
-- Hero H1: geen verloop, geen schaduw — alleen italic koper op het kernwoord.
+- Hero H1: geen verloop, geen schaduw; alleen italic koper op het kernwoord.
 - Section H2: geen verloop, geen schaduw.
-- Eyebrow: klein koperen streepje ervoor (`::before`, 24px).
+- Eyebrow: koperkleurig (`--accent-ink`, op donker `--sage`), halfvet, gewone zinsopbouw. Geen hoofdletters, geen streepje ervoor, en niet boven elke sectie: alleen waar het label iets toevoegt.
 - Links: onderstreping die van links naar rechts ingroeit bij hover.
 
 ## 4. Component Stylings
@@ -124,6 +124,8 @@ Stijlgids voor de site van Thijs van Geenen – *de excellente dienstverlener*. 
 .btn-light { --btn-bg: var(--on-ink); --btn-fg: var(--ink); }
 .btn-light:hover { --btn-bg: var(--accent-soft); }
 ```
+
+**Knoppenregel:** één gevulde knop per blok. Een tweede actie is een tekstlink (`.link` met pijl), geen omlijnde tweede knop.
 
 ### Cards (SpotlightCard)
 ```css
@@ -162,19 +164,24 @@ Stijlgids voor de site van Thijs van Geenen – *de excellente dienstverlener*. 
 .link:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
 ```
 
-### Tags / Badges
+### Sectielabel (eyebrow)
 ```css
-.tag {
-  display: inline-flex; align-items: center; gap: .5rem;
-  padding: .45rem .9rem; border-radius: 999px;
-  background: rgba(var(--ink-rgb), .05); border: 1px solid var(--border);
-  font: 600 .78rem/1 var(--font-body); letter-spacing: .04em; color: var(--text-secondary);
-}
-.tag .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--success); box-shadow: 0 0 0 4px rgba(63,125,91,.15); }
+.eyebrow { margin: 0 0 1.25rem; font-size: .98rem; font-weight: 600; line-height: 1.4; color: var(--accent-ink); }
+.on-ink .eyebrow, .bento-intro .eyebrow { color: var(--sage); }
 ```
+Gewone zin in plaats van een pil met statusbolletje. Voorbeeld in de hero: "Adviseur, trainer, projectleider en coach uit Nuenen".
 
 ### Dienstenlijst (service rows)
-Genummerde rijen (01–04) met Fraunces-titel, omschrijving en pijl. Hover: vlak `--surface` schuift van links in (`transform: scaleX`), pijl draait 45°.
+Rijen met Fraunces-titel, omschrijving en pijl, zonder nummering. Hover: vlak `--surface` schuift van links in (`transform: scaleX`), pijl draait 45°.
+
+### Zigzag (`.pains`, home "Herken je dit?")
+Drie blokken zonder kaart: grote Fraunces-titel met een dunne lijn erboven. Links, rechts (verticaal gecentreerd), links (iets ingesprongen). Mobiel: gewone kolom.
+
+### Trap (`.pillars`, Over Thijs "Drie fundamenten")
+Geordende lijst (`<ol>`) met kaarten als rij: cijfer, titel, tekst. Elke volgende rij springt verder in, omdat de fundamenten op elkaar voortbouwen. Mobiel: geen inspringing.
+
+### Stappen (`.expect`, Contact "Wat je kunt verwachten")
+Verticale stappen met een donkere cirkel met cijfer en een dunne verbindingslijn die bij de laatste stap stopt. Naast een sticky kop (`.split`).
 
 ### Formulier
 Velden met `--surface` achtergrond, 1px `--border`, radius 14px, min-hoogte 3.25rem. Focus: rand `--accent` + ring `0 0 0 4px rgba(var(--accent-rgb), .15)`. Ongeldig (na interactie): rand `--error`.
@@ -194,9 +201,10 @@ Velden met `--surface` achtergrond, 1px `--border`, radius 14px, min-hoogte 3.25
 ```css
 .split { display: grid; grid-template-columns: 5fr 7fr; gap: clamp(2.5rem, 6vw, 6rem); }
 .bento { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem;
-         grid-template-areas: "intro intro a" "b c d"; }
+         grid-template-areas: "intro intro a" "intro intro b" "c d d"; }
 ```
 - Asymmetrie boven symmetrie: 5/7-splitsingen, sticky linkerkolom, bento i.p.v. gelijke rasters.
+- Nooit drie (of meer) gelijke kaarten naast elkaar: kies zigzag, trap, verticale stappen, bento of split.
 
 ## 6. Depth & Elevation
 
@@ -274,7 +282,7 @@ JS slaat magnet, parallax en scroll-reveal over bij `prefers-reduced-motion: red
 - Iconen als inline SVG (lucide-stijl, 1.5px lijn, `currentColor`).
 - Elke interactieve component heeft hover + focus-visible.
 - Teksten in de jij-vorm, kort en concreet, in lijn met "geen dikke rapporten".
-- Nieuwe secties kiezen uit bestaande componenten (card, service-row, bento, split, cta).
+- Nieuwe secties kiezen uit bestaande componenten (card, service-row, bento, split, pains, pillars, expect, cta).
 
 ### Don't
 - ❌ Geen hex-kleuren buiten `:root`.
@@ -284,9 +292,19 @@ JS slaat magnet, parallax en scroll-reveal over bij `prefers-reduced-motion: red
 - ❌ Geen verzonnen cijfers, logo's of testimonials: alleen echte gegevens.
 - ❌ Geen `filter: blur()` op bewegende elementen of meer dan één donkere sectie direct na elkaar.
 - ❌ Geen vette (700+) Fraunces-koppen; de luxe zit in lichte, grote letters.
-- ❌ Geen gelijke 3×3-rasters met identieke kaarten; kies bento of split.
+- ❌ Geen drie (of meer) gelijke kaarten naast elkaar; kies zigzag, trap, verticale stappen, bento of split.
 - ❌ Geen extra animatiebibliotheken (GSAP/Lenis) zonder dat een pin-scrub echt nodig is.
 - ❌ Geen tekst smaller dan 44px aanraakdoel op mobiel.
+
+**AI-kenmerken vermijden** (uit `taste-skill` §9 en `redesign-skill`; zie `.claude/skills/`):
+- ❌ Geen en- of em-streepjes (– —) als scheidingsteken of in lopende tekst. Gebruik een komma, punt of dubbele punt; bij een bereik een gewoon koppelteken.
+- ❌ Geen rijtjes met middenpunten (·) en geen decoratieve bolletjes (status-dots).
+- ❌ Geen "Scroll"-aanwijzing in de hero.
+- ❌ Geen decoratieve nummering (01, 02, 03). Alleen niveaus, fundamenten en processtappen zijn genummerd, omdat de volgorde daar betekenis heeft.
+- ❌ Geen labels in hoofdletters met ruime letterspatiëring (uitzondering: de draaiende badge).
+- ❌ Geen vaste combinatie van gevulde knop + omlijnde knop; de tweede actie is een tekstlink.
+- ❌ Geen cursief accentwoord in elke kop; één per pagina, in de H1.
+- ❌ Geen inline `style`-attributen voor opmaak; alleen `--d` voor animatievertraging is toegestaan.
 
 ## 9. Responsive Behavior
 
