@@ -100,12 +100,12 @@ h3 { font-size: 1.3rem; }
 .eyebrow { text-transform: uppercase; letter-spacing: .12em; font-size: .85rem; font-weight: 600; color: var(--color-accent); margin: 0 0 .75rem; }
 .lead { font-size: 1.2rem; color: var(--color-muted); max-width: 38rem; }
 .actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; }
-.placeholder-portrait {
+.portrait {
+  width: 100%; height: auto;
   aspect-ratio: 4 / 5;
+  object-fit: cover; object-position: center 30%;
   border-radius: 200px 200px var(--radius) var(--radius);
   background: linear-gradient(160deg, var(--color-primary), var(--color-accent));
-  display: grid; place-items: center;
-  color: rgb(255 255 255 / .8); font-size: 1.2rem;
 }
 @media (max-width: 760px) {
   .hero-grid { grid-template-columns: 1fr; }
