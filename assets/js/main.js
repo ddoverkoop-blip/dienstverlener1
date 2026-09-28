@@ -268,6 +268,23 @@ if (form) form.addEventListener('submit', (e) => {
   const subject = encodeURIComponent(`Contactaanvraag van ${data.get('naam')}`);
   const body = encodeURIComponent(`${data.get('bericht')}\n\n${data.get('naam')}\n${data.get('organisatie') || ''}\n${data.get('email')}`);
   window.location.href = `mailto:${form.dataset.mailto}?subject=${subject}&body=${body}`;
+  // Vangnet voor bezoekers zonder mailprogramma
+  const status = document.getElementById('form-status');
+  if (status) status.hidden = false;
 });
+
+/* ---------- Mobiele actiebalk: zichtbaar na de eerste sectie, verborgen bij het contactblok ---------- */
+const mobileCta = document.querySelector('.mobile-cta');
+if (mobileCta) {
+  const heroEl = document.querySelector('.hero, .page-hero');
+  const ctaEl = document.querySelector('.cta');
+  const updateMobileCta = () => {
+    const pastHero = heroEl ? heroEl.getBoundingClientRect().bottom < 0 : window.scrollY > 400;
+    const atCta = ctaEl ? ctaEl.getBoundingClientRect().top < window.innerHeight : false;
+    mobileCta.classList.toggle('is-visible', pastHero && !atCta);
+  };
+  window.addEventListener('scroll', () => requestAnimationFrame(updateMobileCta), { passive: true });
+  updateMobileCta();
+}
 
 onScroll();
