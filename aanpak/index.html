@@ -5,120 +5,160 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Aanpak | Thijs van Geenen</title>
   <meta name="description" content="Drie niveaus die op elkaar voortbouwen: organisatie, teams en individu. Advies, training, projectleiding en coaching.">
+  <meta name="theme-color" content="#F6F1E9">
+  <meta property="og:title" content="Aanpak | Thijs van Geenen">
+  <meta property="og:description" content="Drie niveaus die op elkaar voortbouwen: organisatie, teams en individu. Advies, training, projectleiding en coaching.">
+  <meta property="og:type" content="website">
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&amp;family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&amp;display=swap">
   <link rel="stylesheet" href="../assets/css/style.css">
+  <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
   <a class="skip-link" href="#inhoud">Naar de inhoud</a>
+  <div class="progress" aria-hidden="true"></div>
 
   <header class="site-header">
     <div class="container nav">
-      <a class="logo" href="../">Thijs van Geenen<small>de excellente dienstverlener</small></a>
+      <a class="logo" href="../" aria-label="Thijs van Geenen – naar de homepage">
+        <span class="logo-mark" aria-hidden="true">TvG</span>
+        <span class="logo-text"><strong>Thijs van Geenen</strong><small>de excellente dienstverlener</small></span>
+      </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="menu" aria-label="Menu openen">
-        <span></span><span></span><span></span>
+        <span></span><span></span>
       </button>
       <nav id="menu" class="menu" aria-label="Hoofdmenu">
-        <a href="../">Home</a>
-        <a href="../over-thijs/">Over Thijs</a>
-        <a href="../aanpak/" aria-current="page">Aanpak</a>
-        <a href="../contact/">Contact</a>
-        <a class="btn btn-small" href="../contact/">Plan een gesprek</a>
+        <div class="menu-links">
+          <a href="../">Home</a>
+          <a href="../over-thijs/">Over Thijs</a>
+          <a href="../aanpak/" aria-current="page">Aanpak</a>
+          <a href="../contact/">Contact</a>
+        </div>
+        <a class="btn btn-small" href="../contact/" data-magnet>Plan een gesprek <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        <div class="menu-contact">
+          <a href="tel:+31612345678">06 12 34 56 78</a>
+          <a href="mailto:thijs@voorbeeld.nl">thijs@voorbeeld.nl</a>
+        </div>
       </nav>
     </div>
   </header>
 
   <main id="inhoud">
-    <section class="page-hero">
-      <div class="container prose">
-        <p class="eyebrow">Aanpak</p>
-        <h1>Ik help organisaties naar betere team- en klantresultaten.</h1>
-        <p class="lead">Door structuur, betrokken teams en klantgedreven werken te combineren en optimaliseren.</p>
-        <p>Geen menukaart met losse diensten, maar drie niveaus die op elkaar voortbouwen. Van de organisatie, via teams, naar de mensen die het elke dag waarmaken.</p>
+    <section class="page-hero grain" data-pause>
+      <div class="aura" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div class="container">
+        <p class="eyebrow" data-reveal>Aanpak</p>
+        <h1 data-split="hero">Ik help organisaties naar betere <em>team- en klantresultaten.</em></h1>
+        <p class="lead" data-reveal style="--d: 500ms">Door structuur, betrokken teams en klantgedreven werken te combineren en optimaliseren.</p>
+        <p class="narrow" data-reveal style="--d: 650ms">Geen menukaart met losse diensten, maar drie niveaus die op elkaar voortbouwen. Van de organisatie, via teams, naar de mensen die het elke dag waarmaken.</p>
       </div>
     </section>
 
-    <section class="section section-alt">
-      <div class="container level-detail-list">
+    <nav class="level-nav" aria-label="Niveaus">
+      <ol>
+        <li><a href="#niveau-1"><span>1</span>Organisatie</a></li>
+        <li><a href="#niveau-2"><span>2</span>Team</a></li>
+        <li><a href="#niveau-3"><span>3</span>Individu</a></li>
+      </ol>
+    </nav>
+
+    <section class="section" style="padding-top: 0">
+      <div class="container">
         <article class="level-detail" id="niveau-1">
-          <span class="level-num">1</span>
-          <div>
-            <p class="eyebrow">Niveau 1</p>
-            <h2>Organisatie</h2>
-            <div class="service"><h3>Advies</h3><p>Ik adviseer organisaties over het verbeteren van team- en klantprestaties.</p></div>
-            <p class="basis"><strong>Vertrekpunt · Structuur</strong> Structuur, werkwijzen en werkafspraken als fundament.</p>
-            <ol class="level-path" aria-label="Niveaus"><li class="current"><a href="#niveau-1">1. Organisatie</a></li><li><a href="#niveau-2">2. Team</a></li><li><a href="#niveau-3">3. Individu</a></li></ol>
+          <div class="sticky">
+            <span class="level-num" aria-hidden="true">1</span>
+            <p class="eyebrow" data-reveal>Niveau 1</p>
+            <h2 data-split>Organisatie</h2>
+          </div>
+          <div class="level-services" data-stagger>
+              <article class="card level-service"><h3><span class="outcome-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg></span>Advies</h3><p>Ik adviseer organisaties over het verbeteren van team- en klantprestaties.</p></article>
+            <div class="basis"><strong>Vertrekpunt · Structuur</strong><p>Structuur, werkwijzen en werkafspraken als fundament.</p></div>
           </div>
         </article>
-
         <article class="level-detail" id="niveau-2">
-          <span class="level-num">2</span>
-          <div>
-            <p class="eyebrow">Niveau 2</p>
-            <h2>Teams</h2>
-            <div class="service"><h3>Training</h3><p>Ik help teams in hun ontwikkeling naar beter organiseren en uitvoeren.</p></div>
-            <div class="service"><h3>Projectleider</h3><p>Ik begeleid veranderopgaves waarin processen, systemen en het gedragscomponent van medewerkers elkaar ontmoeten op een duurzame manier.</p></div>
-            <p class="basis"><strong>Vertrekpunt · Betrokken teams</strong> Betrokken teams die vanuit intrinsieke motivatie het verschil maken.</p>
-            <ol class="level-path" aria-label="Niveaus"><li><a href="#niveau-1">1. Organisatie</a></li><li class="current"><a href="#niveau-2">2. Team</a></li><li><a href="#niveau-3">3. Individu</a></li></ol>
+          <div class="sticky">
+            <span class="level-num" aria-hidden="true">2</span>
+            <p class="eyebrow" data-reveal>Niveau 2</p>
+            <h2 data-split>Teams</h2>
+          </div>
+          <div class="level-services" data-stagger>
+              <article class="card level-service"><h3><span class="outcome-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h20"/><path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"/><path d="m7 21 5-5 5 5"/></svg></span>Training</h3><p>Ik help teams in hun ontwikkeling naar beter organiseren en uitvoeren.</p></article>
+              <article class="card level-service"><h3><span class="outcome-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></svg></span>Projectleider</h3><p>Ik begeleid veranderopgaves waarin processen, systemen en het gedragscomponent van medewerkers elkaar ontmoeten op een duurzame manier.</p></article>
+            <div class="basis"><strong>Vertrekpunt · Betrokken teams</strong><p>Betrokken teams die vanuit intrinsieke motivatie het verschil maken.</p></div>
           </div>
         </article>
-
         <article class="level-detail" id="niveau-3">
-          <span class="level-num">3</span>
-          <div>
-            <p class="eyebrow">Niveau 3</p>
-            <h2>Individu</h2>
-            <div class="service"><h3>Coaching</h3><p>Ik coach leidinggevenden om resultaat en gedrag duurzaam te sturen.</p></div>
-            <p class="basis"><strong>Vertrekpunt · Klantgedreven werken</strong> Klantgedreven werken, met de klant als vertrekpunt.</p>
-            <ol class="level-path" aria-label="Niveaus"><li><a href="#niveau-1">1. Organisatie</a></li><li><a href="#niveau-2">2. Team</a></li><li class="current"><a href="#niveau-3">3. Individu</a></li></ol>
+          <div class="sticky">
+            <span class="level-num" aria-hidden="true">3</span>
+            <p class="eyebrow" data-reveal>Niveau 3</p>
+            <h2 data-split>Individu</h2>
+          </div>
+          <div class="level-services" data-stagger>
+              <article class="card level-service"><h3><span class="outcome-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></span>Coaching</h3><p>Ik coach leidinggevenden om resultaat en gedrag duurzaam te sturen.</p></article>
+            <div class="basis"><strong>Vertrekpunt · Klantgedreven werken</strong><p>Klantgedreven werken, met de klant als vertrekpunt.</p></div>
           </div>
         </article>
       </div>
     </section>
 
-    <section class="section cta-band">
+    <section class="section cta on-ink grain" data-pause>
+      <div class="aura" aria-hidden="true"><span></span><span></span><span></span></div>
       <div class="container cta-grid">
         <div>
-          <p class="eyebrow">Kennismaken</p>
-          <h2>Nieuwsgierig? Laten we verkennen of ik iets voor je kan betekenen.</h2>
-          <p>In een eerste, vrijblijvend gesprek kijken we samen waar jouw organisatie staat en op welk niveau de meeste winst te halen is.</p>
-          <a class="btn btn-light" href="../contact/">Plan een gesprek</a>
+          <p class="eyebrow" data-reveal>Kennismaken</p>
+          <h2 data-split>Nieuwsgierig? Laten we <em>verkennen</em> of ik iets voor je kan betekenen.</h2>
+          <p data-reveal>In een eerste, vrijblijvend gesprek kijken we samen waar jouw organisatie staat en op welk niveau de meeste winst te halen is.</p>
+          <div class="actions" data-reveal>
+            <a class="btn btn-light" href="../contact/" data-magnet>Plan een gesprek <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+          </div>
         </div>
-        <ul class="cta-contact">
-          <li><span>Bel direct</span><a href="tel:+31612345678">06 12 34 56 78</a></li>
-          <li><span>Of mail</span><a href="mailto:thijs@voorbeeld.nl">thijs@voorbeeld.nl</a></li>
-        </ul>
+        <div class="contact-cards" data-stagger>
+          <div class="contact-card">
+            <span class="icon-wrap"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+            <div class="grow"><small>Bel direct</small><a href="tel:+31612345678">06 12 34 56 78</a></div>
+          </div>
+          <div class="contact-card">
+            <span class="icon-wrap"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span>
+            <div class="grow"><small>Of mail</small><a href="mailto:thijs@voorbeeld.nl">thijs@voorbeeld.nl</a></div>
+            <button class="copy-btn" type="button" data-copy="thijs@voorbeeld.nl" data-label="Gekopieerd" aria-label="E-mailadres kopiëren"><svg class="icon icon-copy" viewBox="0 0 24 24" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg><svg class="icon icon-check" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></button>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <p class="footer-name">Thijs van Geenen</p>
-        <p>de excellente dienstverlener</p>
-        <p>Geen dikke rapporten, maar direct zichtbaar resultaat.</p>
+  <footer class="site-footer grain on-ink">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <p class="footer-name">Thijs van Geenen</p>
+          <p>de excellente dienstverlener. Geen dikke rapporten, maar direct zichtbaar resultaat.</p>
+        </div>
+        <div>
+          <p class="footer-title">Contact</p>
+          <ul>
+            <li><a href="tel:+31612345678">06 12 34 56 78</a></li>
+            <li><a href="mailto:thijs@voorbeeld.nl">thijs@voorbeeld.nl</a></li>
+            <li>Nuenen, Noord-Brabant</li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-title">Menu</p>
+          <ul>
+            <li><a href="../">Home</a></li>
+            <li><a href="../over-thijs/">Over Thijs</a></li>
+            <li><a href="../aanpak/">Aanpak</a></li>
+            <li><a href="../contact/">Contact</a></li>
+          </ul>
+        </div>
       </div>
-      <div>
-        <p class="footer-title">Contact</p>
-        <ul>
-          <li><a href="tel:+31612345678">06 12 34 56 78</a></li>
-          <li><a href="mailto:thijs@voorbeeld.nl">thijs@voorbeeld.nl</a></li>
-          <li>Nuenen, Noord-Brabant</li>
-        </ul>
+      <p class="footer-word" aria-hidden="true">excellente dienstverlening</p>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year">2026</span> Thijs van Geenen · de excellente dienstverlener</p>
+        <p>Zelfstandig sinds april 2024</p>
       </div>
-      <div>
-        <p class="footer-title">Menu</p>
-        <ul>
-          <li><a href="../">Home</a></li>
-          <li><a href="../over-thijs/">Over Thijs</a></li>
-          <li><a href="../aanpak/">Aanpak</a></li>
-          <li><a href="../contact/">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="container footer-bottom">
-      <p>&copy; <span id="year">2026</span> Thijs van Geenen · de excellente dienstverlener</p>
-      <p>Zelfstandig sinds april 2024</p>
     </div>
   </footer>
 
