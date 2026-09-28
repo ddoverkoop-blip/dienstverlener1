@@ -1,4 +1,4 @@
-# Website zelfstandig adviseur / coach
+# Thijs van Geenen – de excellente dienstverlener
 
 Eenvoudige, statische website (HTML + CSS + JavaScript, geen build-stap) die automatisch wordt gepubliceerd via GitHub Pages.
 
@@ -7,7 +7,10 @@ Eenvoudige, statische website (HTML + CSS + JavaScript, geen build-stap) die aut
 ## Structuur
 
 ```
-index.html            Homepage (alle secties: hero, diensten, werkwijze, over mij, ervaringen, contact)
+index.html            Home
+over-thijs/index.html Over Thijs
+aanpak/index.html     Aanpak (drie niveaus, ankers #niveau-1/2/3)
+contact/index.html    Contact + formulier
 404.html              Foutpagina
 assets/css/style.css  Alle styling – kleuren en fonts staan als variabelen bovenaan (:root)
 assets/js/main.js     Mobiel menu, jaartal in footer, contactformulier
@@ -28,16 +31,12 @@ python3 -m http.server 8000
 - Werk in een eigen branch (`feature/...`) en open een pull request naar `main`.
 - Elke push naar `main` wordt automatisch live gezet (GitHub Pages: "Deploy from a branch", `main` / root).
 - Houd pull requests klein en per onderwerp (bv. één sectie of één pagina) om merge-conflicten te voorkomen.
-- Nieuwe pagina's: kopieer de `<header>` en `<footer>` uit `index.html` en gebruik relatieve paden (`assets/...`).
+- Header en footer staan in elke pagina; pas ze bij een wijziging in alle vier aan. Submappen gebruiken `../assets/...`.
 - Opmaak volgens `.editorconfig` (2 spaties, UTF-8, LF).
 
-## Nog te doen (placeholders)
+## Nog te doen
 
-Zoek in de code naar `[` om alle placeholders te vinden:
-
-- [ ] Naam, KvK-nummer, plaats
-- [ ] E-mailadres en telefoonnummer (`index.html` en `data-mailto` op het formulier)
-- [ ] Portretfoto in `assets/img/` en vervangen in de hero
-- [ ] Tekst "Over mij" en echte ervaringen/testimonials
-- [ ] Kleuren/fonts afstemmen op huisstijl (`assets/css/style.css`)
-- [ ] Eventueel: echt contactformulier (bv. Formspree), privacyverklaring, eigen domein
+- [ ] Echt telefoonnummer en e-mailadres (nu `06 12 34 56 78` / `thijs@voorbeeld.nl`, in alle pagina's + `data-mailto` op het contactformulier)
+- [ ] Portretfoto in hogere resolutie (nu 248×248 px)
+- [ ] KvK-nummer, privacyverklaring
+- [ ] Eventueel: echt contactformulier (bv. Formspree), eigen domein

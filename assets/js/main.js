@@ -15,15 +15,16 @@ menu.addEventListener('click', (e) => {
 });
 
 // Jaartal in footer
-document.getElementById('year').textContent = new Date().getFullYear();
+const year = document.getElementById('year');
+if (year) year.textContent = new Date().getFullYear();
 
 // Contactformulier: opent voorlopig de mailclient (geen backend nodig)
 const form = document.getElementById('contact-form');
 
-form.addEventListener('submit', (e) => {
+if (form) form.addEventListener('submit', (e) => {
   e.preventDefault();
   const data = new FormData(form);
   const subject = encodeURIComponent(`Contactaanvraag van ${data.get('naam')}`);
-  const body = encodeURIComponent(`${data.get('bericht')}\n\n${data.get('naam')}\n${data.get('email')}`);
+  const body = encodeURIComponent(`${data.get('bericht')}\n\n${data.get('naam')}\n${data.get('organisatie') || ''}\n${data.get('email')}`);
   window.location.href = `mailto:${form.dataset.mailto}?subject=${subject}&body=${body}`;
 });
