@@ -12,7 +12,6 @@ index.html            Homepage (alle secties: hero, diensten, werkwijze, over mi
 assets/css/style.css  Alle styling – kleuren en fonts staan als variabelen bovenaan (:root)
 assets/js/main.js     Mobiel menu, jaartal in footer, contactformulier
 assets/img/           Afbeeldingen en favicon
-.github/workflows/    Automatische deploy naar GitHub Pages
 ```
 
 ## Lokaal bekijken
@@ -27,7 +26,7 @@ python3 -m http.server 8000
 ## Samenwerken
 
 - Werk in een eigen branch (`feature/...`) en open een pull request naar `main`.
-- Elke push naar `main` wordt automatisch live gezet (zie `.github/workflows/pages.yml`).
+- Elke push naar `main` wordt automatisch live gezet (GitHub Pages: "Deploy from a branch", `main` / root).
 - Houd pull requests klein en per onderwerp (bv. één sectie of één pagina) om merge-conflicten te voorkomen.
 - Nieuwe pagina's: kopieer de `<header>` en `<footer>` uit `index.html` en gebruik relatieve paden (`assets/...`).
 - Opmaak volgens `.editorconfig` (2 spaties, UTF-8, LF).
