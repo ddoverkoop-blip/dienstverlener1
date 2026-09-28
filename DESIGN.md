@@ -34,7 +34,7 @@ Stijlgids voor de site van Thijs van Geenen – *de excellente dienstverlener*. 
   /* Text */
   --text: #15201D;             /* koppen */
   --text-secondary: #4B5752;   /* lopende tekst */
-  --text-tertiary: #7A827D;    /* labels, meta */
+  --text-tertiary: #5F6762;    /* labels, meta (AA-contrast op alle lichte vlakken) */
   --on-ink: #F6F1E9;           /* tekst op donker */
   --on-ink-secondary: rgba(246, 241, 233, 0.72);
 

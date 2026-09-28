@@ -8,17 +8,37 @@ const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches
 const toggle = document.querySelector('.nav-toggle');
 const menu = document.getElementById('menu');
 
-function setMenu(open) {
+const mobileMenuQuery = window.matchMedia('(max-width: 900px)');
+
+function setMenu(open, { restoreFocus = false } = {}) {
   menu.classList.toggle('open', open);
   toggle.setAttribute('aria-expanded', open);
   toggle.setAttribute('aria-label', open ? 'Menu sluiten' : 'Menu openen');
   document.body.classList.toggle('menu-open', open);
+  // Focus binnen het menu houden: alles achter het menu is onbereikbaar zolang het open is
+  document.querySelectorAll('main, .site-footer, .mobile-cta, .skip-link').forEach((el) => { el.inert = open; });
+  if (!open && restoreFocus) toggle.focus();
 }
 
 if (toggle && menu) {
-  toggle.addEventListener('click', () => setMenu(!menu.classList.contains('open')));
+  toggle.addEventListener('click', () => {
+    const open = !menu.classList.contains('open');
+    setMenu(open, { restoreFocus: !open });
+  });
   menu.addEventListener('click', (e) => { if (e.target.closest('a')) setMenu(false); });
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
+  document.addEventListener('keydown', (e) => {
+    if (!menu.classList.contains('open')) return;
+    if (e.key === 'Escape') { setMenu(false, { restoreFocus: true }); return; }
+    if (e.key !== 'Tab') return;
+    // Tab loopt rond binnen de menuknop en de menulinks
+    const items = [toggle, ...menu.querySelectorAll('a')];
+    const first = items[0];
+    const last = items[items.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    else if (!items.includes(document.activeElement)) { e.preventDefault(); first.focus(); }
+  });
+  mobileMenuQuery.addEventListener('change', (e) => { if (!e.matches && menu.classList.contains('open')) setMenu(false); });
 }
 
 /* ---------- Header + voortgangsbalk ---------- */
@@ -34,12 +54,16 @@ function onScroll() {
   if (header) {
     header.classList.toggle('is-scrolled', y > 40);
     const menuOpen = menu && menu.classList.contains('open');
-    header.classList.toggle('is-hidden', !menuOpen && y > lastY && y > 400);
+    const hasFocus = header.contains(document.activeElement);
+    header.classList.toggle('is-hidden', !menuOpen && !hasFocus && y > lastY && y > 400);
   }
   lastY = y;
   updateScrollEffects();
   ticking = false;
 }
+
+// Header nooit verbergen terwijl er toetsenbordfocus in staat
+if (header) header.addEventListener('focusin', () => header.classList.remove('is-hidden'));
 
 window.addEventListener('scroll', () => {
   if (!ticking) { requestAnimationFrame(onScroll); ticking = true; }
@@ -69,9 +93,16 @@ function splitWords(el) {
       }
     });
   };
-  if (!el.getAttribute('aria-label')) el.setAttribute('aria-label', el.textContent.replace(/\s+/g, ' ').trim());
-  walk(el);
-  el.querySelectorAll('.split-word').forEach((w) => w.setAttribute('aria-hidden', 'true'));
+  // Schermlezers krijgen de gewone zin; de geanimeerde woorden zijn alleen visueel
+  const text = el.textContent.replace(/\s+/g, ' ').trim();
+  const visual = document.createElement('span');
+  visual.setAttribute('aria-hidden', 'true');
+  while (el.firstChild) visual.appendChild(el.firstChild);
+  walk(visual);
+  const srText = document.createElement('span');
+  srText.className = 'sr-only';
+  srText.textContent = text;
+  el.append(srText, visual);
 }
 
 document.querySelectorAll('[data-split]').forEach(splitWords);
@@ -227,7 +258,12 @@ if (levelLinks.length && 'IntersectionObserver' in window) {
   const levelObs = new IntersectionObserver((entries) => {
     entries.forEach((e) => {
       if (!e.isIntersecting) return;
-      levelLinks.forEach((a) => a.classList.toggle('active', a.getAttribute('href') === `#${e.target.id}`));
+      levelLinks.forEach((a) => {
+        const active = a.getAttribute('href') === `#${e.target.id}`;
+        a.classList.toggle('active', active);
+        if (active) a.setAttribute('aria-current', 'location');
+        else a.removeAttribute('aria-current');
+      });
     });
   }, { rootMargin: '-45% 0px -50% 0px' });
   levelLinks.forEach((a) => {
@@ -237,6 +273,12 @@ if (levelLinks.length && 'IntersectionObserver' in window) {
 }
 
 /* ---------- E-mailadres kopiëren ---------- */
+// Vaste, lege statusregio zodat schermlezers "Gekopieerd" betrouwbaar voorlezen
+const copyStatus = document.createElement('div');
+copyStatus.className = 'sr-only';
+copyStatus.setAttribute('role', 'status');
+document.body.appendChild(copyStatus);
+
 document.querySelectorAll('[data-copy]').forEach((btn) => {
   btn.addEventListener('click', async () => {
     try {
@@ -250,10 +292,22 @@ document.querySelectorAll('[data-copy]').forEach((btn) => {
       tmp.remove();
     }
     btn.classList.add('copied');
+    copyStatus.textContent = '';
+    setTimeout(() => { copyStatus.textContent = 'E-mailadres gekopieerd'; }, 50);
     btn.setAttribute('data-label', 'Gekopieerd');
     setTimeout(() => btn.classList.remove('copied'), 2000);
   });
 });
+
+/* ---------- Animaties pauzeren ---------- */
+const motionToggles = [...document.querySelectorAll('.motion-toggle, .motion-toggle-text')];
+function setMotionPaused(paused) {
+  document.documentElement.classList.toggle('motion-paused', paused);
+  motionToggles.forEach((btn) => btn.setAttribute('aria-pressed', paused));
+  try { localStorage.setItem('motion-paused', paused ? '1' : '0'); } catch { /* opslag niet beschikbaar */ }
+}
+try { if (localStorage.getItem('motion-paused') === '1') setMotionPaused(true); } catch { /* opslag niet beschikbaar */ }
+motionToggles.forEach((btn) => btn.addEventListener('click', () => setMotionPaused(!document.documentElement.classList.contains('motion-paused'))));
 
 /* ---------- Jaartal in footer ---------- */
 const year = document.getElementById('year');

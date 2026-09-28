@@ -37,7 +37,8 @@ python3 -m http.server 8000
 - Header en footer staan in elke pagina; pas ze bij een wijziging in alle vier aan. Submappen gebruiken `../assets/...`.
 - Opmaak volgens `.editorconfig` (2 spaties, UTF-8, LF).
 - **Ontwerp:** volg `DESIGN.md`. Geen losse hex-kleuren buiten `:root`, geen nieuwe lettertypes, en bouw nieuwe secties uit de bestaande componenten (`card`, `service-row`, `bento`, `split`, `cta`).
-- **Animaties via attributen:** `data-reveal` (infaden), `data-stagger` (kinderen na elkaar), `data-split` (kop woord voor woord; `data-split="hero"` start direct), `data-scroll-reveal` (woorden lichten op tijdens scrollen), `data-magnet` (knop volgt de muis), `data-parallax="0.06"`. Alles respecteert "minder beweging" in het besturingssysteem.
+- **Animaties via attributen:** `data-reveal` (infaden), `data-stagger` (kinderen na elkaar), `data-split` (kop woord voor woord; `data-split="hero"` start direct), `data-scroll-reveal` (woorden lichten op tijdens scrollen), `data-magnet` (knop volgt de muis), `data-parallax="0.06"`. Alles respecteert "minder beweging" in het besturingssysteem, en bezoekers kunnen animaties pauzeren (knop in de band op home en in de footer).
+- **Toegankelijkheid:** nieuwe onderdelen checken met de `better-accessibility` skill. Koppen met `data-split` krijgen automatisch een onzichtbare leesbare versie voor schermlezers.
 
 ## Nog te doen
 
@@ -53,5 +54,5 @@ python3 -m http.server 8000
 ## Credits
 
 Ontworpen met de `web-design` skill (`.claude/skills/web-design`, xiaopu-ai/web-design, MIT).
-Conversie en SEO verbeterd met `page-cro` en `seo-audit` (`.claude/skills/`, uit [boraoztunc/skills](https://github.com/boraoztunc/skills), MIT).
+Conversie, SEO en toegankelijkheid verbeterd met `page-cro`, `seo-audit` en `better-accessibility` (`.claude/skills/`, uit [boraoztunc/skills](https://github.com/boraoztunc/skills), MIT).
 Motion effects inspired by [vue-bits](https://github.com/DavidHDev/vue-bits) by DavidHDev (MIT). Lettertypes: Fraunces en DM Sans (Google Fonts, OFL).
