@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>[Naam] – Adviseur &amp; Coach</title>
+  <meta name="description" content="Zelfstandig adviseur en coach. Helder advies en persoonlijke begeleiding voor professionals en organisaties.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Naar inhoud</a>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="logo" href="#top">[Naam]<span>.</span></a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="menu" aria-label="Menu openen">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="menu" class="menu" aria-label="Hoofdmenu">
+        <a href="#diensten">Diensten</a>
+        <a href="#werkwijze">Werkwijze</a>
+        <a href="#over">Over mij</a>
+        <a href="#ervaringen">Ervaringen</a>
+        <a class="btn btn-small" href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Adviseur &amp; coach</p>
+          <h1>Helderheid in keuzes, <em>beweging</em> in je werk.</h1>
+          <p class="lead">Ik help professionals en teams om vastgelopen vraagstukken weer in beweging te krijgen: met scherp advies waar dat nodig is en persoonlijke coaching waar dat helpt.</p>
+          <div class="actions">
+            <a class="btn" href="#contact">Plan een kennismaking</a>
+            <a class="btn btn-ghost" href="#diensten">Bekijk diensten</a>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <!-- Vervang door een foto: <img src="assets/img/portret.jpg" alt="..."> -->
+          <div class="placeholder-portrait">Foto</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIENSTEN -->
+    <section class="section" id="diensten">
+      <div class="container">
+        <h2>Diensten</h2>
+        <p class="section-intro">Drie manieren waarop we kunnen samenwerken.</p>
+        <div class="cards">
+          <article class="card">
+            <h3>Individuele coaching</h3>
+            <p>Loopbaanvragen, leiderschap of werkplezier: in een traject van 4–8 gesprekken werken we aan concrete doelen.</p>
+          </article>
+          <article class="card">
+            <h3>Advies voor organisaties</h3>
+            <p>Een frisse blik op vraagstukken rond organisatie, samenwerking en verandering, met een praktisch plan van aanpak.</p>
+          </article>
+          <article class="card">
+            <h3>Teamsessies &amp; workshops</h3>
+            <p>Interactieve sessies op maat die teams helpen beter samen te werken en knopen door te hakken.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- WERKWIJZE -->
+    <section class="section section-alt" id="werkwijze">
+      <div class="container">
+        <h2>Werkwijze</h2>
+        <ol class="steps">
+          <li><strong>Kennismaking</strong><span>Een vrijblijvend gesprek van 30 minuten over je vraag.</span></li>
+          <li><strong>Voorstel</strong><span>Een helder voorstel met aanpak, planning en kosten.</span></li>
+          <li><strong>Aan de slag</strong><span>We werken samen aan het resultaat, met ruimte voor bijsturing.</span></li>
+          <li><strong>Evaluatie</strong><span>We kijken terug op wat het heeft opgeleverd en wat nog nodig is.</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- OVER MIJ -->
+    <section class="section" id="over">
+      <div class="container two-col">
+        <div>
+          <h2>Over mij</h2>
+          <p>[Korte introductie: wie ben je, wat is je achtergrond en waarom doe je dit werk?]</p>
+          <p>[Ervaring, opleidingen en certificeringen. Wat maakt jouw aanpak anders?]</p>
+        </div>
+        <ul class="facts">
+          <li><strong>15+</strong> jaar ervaring</li>
+          <li><strong>200+</strong> trajecten begeleid</li>
+          <li><strong>NOBCO</strong> gecertificeerd</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ERVARINGEN -->
+    <section class="section section-alt" id="ervaringen">
+      <div class="container">
+        <h2>Ervaringen</h2>
+        <div class="cards">
+          <blockquote class="quote">
+            <p>“Binnen een paar gesprekken wist ik weer waar ik naartoe wilde. Heel prettig en to the point.”</p>
+            <cite>– [Naam], [functie]</cite>
+          </blockquote>
+          <blockquote class="quote">
+            <p>“Het advies was concreet en direct toepasbaar. Ons team werkt merkbaar beter samen.”</p>
+            <cite>– [Naam], [organisatie]</cite>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="container two-col">
+        <div>
+          <h2>Contact</h2>
+          <p>Benieuwd wat ik voor je kan betekenen? Stuur een bericht, dan neem ik binnen twee werkdagen contact op.</p>
+          <ul class="contact-list">
+            <li>E-mail: <a href="mailto:info@example.nl">info@example.nl</a></li>
+            <li>Telefoon: <a href="tel:+31600000000">06 – 00 00 00 00</a></li>
+            <li>Regio: [Plaats] en online</li>
+          </ul>
+        </div>
+        <!-- Formulier opent de mailclient; later te vervangen door bv. Formspree/Netlify Forms -->
+        <form class="contact-form" id="contact-form" data-mailto="info@example.nl">
+          <label>Naam <input name="naam" required autocomplete="name"></label>
+          <label>E-mail <input name="email" type="email" required autocomplete="email"></label>
+          <label>Bericht <textarea name="bericht" rows="5" required></textarea></label>
+          <button class="btn" type="submit">Verstuur</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> [Naam] · KvK [nummer]</p>
+      <a href="#top">Terug naar boven ↑</a>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
