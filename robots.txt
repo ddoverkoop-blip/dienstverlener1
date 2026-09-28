@@ -1,0 +1,7 @@
+# Let op: zoekmachines lezen robots.txt alleen in de hoofdmap van een domein.
+# Op ddoverkoop-blip.github.io/dienstverlener1/ wordt dit bestand dus genegeerd;
+# het werkt zodra de site op een eigen domein staat (pas dan de Sitemap-regel aan).
+User-agent: *
+Allow: /
+
+Sitemap: https://ddoverkoop-blip.github.io/dienstverlener1/sitemap.xml

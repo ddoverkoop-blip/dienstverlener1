@@ -11,7 +11,9 @@ index.html            Home
 over-thijs/index.html Over Thijs
 aanpak/index.html     Aanpak (drie niveaus, ankers #niveau-1/2/3)
 contact/index.html    Contact + formulier
-404.html              Foutpagina
+404.html              Foutpagina (noindex)
+sitemap.xml           Sitemap voor Google Search Console
+robots.txt            Werkt pas op een eigen domein (zie opmerking in het bestand)
 DESIGN.md             Stijlgids: kleuren, typografie, componenten, animaties, do's & don'ts
 assets/css/style.css  Alle styling – kleuren/fonts als variabelen bovenaan (:root), volgens DESIGN.md
 assets/js/main.js     Menu, scroll-animaties, spotlight/magneet-effecten, kopieerknop, formulier
@@ -43,8 +45,13 @@ python3 -m http.server 8000
 - [ ] Portretfoto in hogere resolutie (nu 248×248 px)
 - [ ] KvK-nummer, privacyverklaring
 - [ ] Eventueel: echt contactformulier (bv. Formspree), eigen domein
+- [ ] Sitemap aanmelden in Google Search Console: `https://ddoverkoop-blip.github.io/dienstverlener1/sitemap.xml`
+- [ ] Google Bedrijfsprofiel aanmaken (Nuenen) met dezelfde naam, adres en telefoon als op de site
+- [ ] Deelafbeelding van 1200×630 px (`og:image`), nu wordt het kleine portret gebruikt
+- [ ] Na echte contactgegevens: `telephone` en `email` toevoegen aan de JSON-LD in `index.html`
 
 ## Credits
 
 Ontworpen met de `web-design` skill (`.claude/skills/web-design`, xiaopu-ai/web-design, MIT).
+Conversie en SEO verbeterd met `page-cro` en `seo-audit` (`.claude/skills/`, uit [boraoztunc/skills](https://github.com/boraoztunc/skills), MIT).
 Motion effects inspired by [vue-bits](https://github.com/DavidHDev/vue-bits) by DavidHDev (MIT). Lettertypes: Fraunces en DM Sans (Google Fonts, OFL).

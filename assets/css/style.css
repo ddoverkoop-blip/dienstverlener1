@@ -564,6 +564,70 @@ a.card { display: block; color: inherit; text-decoration: none; }
 .footer-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .75rem 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-on-ink); font-size: .82rem; }
 .footer-bottom p { margin: 0; }
 
+
+/* ---------- Conversie-onderdelen ---------- */
+/* Herken je dit? */
+.pains { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+.pain { display: flex; flex-direction: column; gap: .75rem; }
+.pain-num { font: italic 300 1.1rem/1 var(--font-display); color: var(--accent-ink); margin-bottom: 1.5rem; }
+.pain h3 { margin: 0; }
+.pain p { margin: 0; }
+.pains-close { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem 2rem; margin-top: clamp(2rem, 4vw, 3rem); padding-top: 2rem; border-top: 1px solid var(--border); }
+.pains-close p { margin: 0; font: 350 clamp(1.25rem, 2vw, 1.55rem)/1.4 var(--font-display); color: var(--text); max-width: 40rem; }
+.pains-close strong { font-weight: 450; font-style: italic; color: var(--accent-ink); }
+
+/* FAQ */
+.faq { border-top: 1px solid var(--border); }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-item summary {
+  display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
+  min-height: 44px; padding: 1.5rem 0; cursor: pointer; list-style: none;
+  font: 400 clamp(1.2rem, 2vw, 1.45rem)/1.3 var(--font-display); color: var(--text);
+  transition: color .3s var(--ease);
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary:hover { color: var(--accent-ink); }
+.faq-item summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 4px; }
+.faq-icon { position: relative; flex: none; width: 2.5rem; height: 2.5rem; border-radius: 50%; border: 1px solid var(--border-hover); transition: background .35s var(--ease), border-color .35s var(--ease), transform .45s var(--ease); }
+.faq-icon::before, .faq-icon::after { content: ""; position: absolute; left: 50%; top: 50%; width: 12px; height: 1.5px; background: var(--text); translate: -50% -50%; transition: transform .45s var(--ease), background .35s; }
+.faq-icon::after { transform: rotate(90deg); }
+.faq-item[open] .faq-icon { background: var(--ink); border-color: var(--ink); transform: rotate(180deg); }
+.faq-item[open] .faq-icon::before, .faq-item[open] .faq-icon::after { background: var(--on-ink); }
+.faq-item[open] .faq-icon::after { transform: rotate(0deg); }
+.faq-item p { margin: 0 0 1.75rem; max-width: 40rem; }
+.faq-item[open] p { animation: faq-in .5s var(--ease); }
+@keyframes faq-in { from { opacity: 0; transform: translateY(-6px); } }
+
+/* Contact: verwachtingen + formulierstatus */
+.expect { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+.expect .level-num { display: block; font-size: clamp(3.5rem, 6vw, 4.5rem); margin-bottom: 1.5rem; }
+.expect h3 { margin-bottom: .5rem; }
+.expect p { margin: 0; }
+.optional { font-weight: 400; color: var(--text-tertiary); }
+.form-status { margin: 0; padding: 1rem 1.25rem; border-radius: var(--radius); background: rgba(var(--success-rgb), .1); color: var(--text); font-size: .95rem; }
+.form-status a { color: var(--accent-ink); font-weight: 600; }
+
+/* Mobiele actiebalk */
+.mobile-cta { display: none; }
+@media (max-width: 760px) {
+  .mobile-cta {
+    position: fixed; left: .75rem; right: .75rem; bottom: calc(.75rem + env(safe-area-inset-bottom)); z-index: 55;
+    display: flex; gap: .5rem; padding: .5rem; border-radius: 999px;
+    background: rgba(var(--bg-rgb), .92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border); box-shadow: var(--shadow-lg);
+    transform: translateY(calc(100% + 2rem)); transition: transform .5s var(--ease);
+  }
+  .mobile-cta.is-visible { transform: none; }
+  .mobile-cta .btn { flex: 1; min-height: 3rem; font-size: .95rem; }
+  .mobile-cta .mobile-cta-call { flex: none; width: 3rem; padding: 0; }
+  body.menu-open .mobile-cta { transform: translateY(calc(100% + 2rem)); }
+  .site-footer { padding-bottom: 6rem; }
+}
+
+@media (max-width: 1024px) {
+  .pains, .expect { grid-template-columns: 1fr; }
+}
+
 /* ---------- Responsief ---------- */
 @media (max-width: 1024px) {
   .hero-grid, .page-hero-grid, .split, .story, .level-detail, .contact-hero, .cta-grid { grid-template-columns: 1fr; }
