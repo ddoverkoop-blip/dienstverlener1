@@ -12,8 +12,9 @@ over-thijs/index.html Over Thijs
 aanpak/index.html     Aanpak (drie niveaus, ankers #niveau-1/2/3)
 contact/index.html    Contact + formulier
 404.html              Foutpagina
-assets/css/style.css  Alle styling – kleuren en fonts staan als variabelen bovenaan (:root)
-assets/js/main.js     Mobiel menu, jaartal in footer, contactformulier
+DESIGN.md             Stijlgids: kleuren, typografie, componenten, animaties, do's & don'ts
+assets/css/style.css  Alle styling – kleuren/fonts als variabelen bovenaan (:root), volgens DESIGN.md
+assets/js/main.js     Menu, scroll-animaties, spotlight/magneet-effecten, kopieerknop, formulier
 assets/img/           Afbeeldingen en favicon
 ```
 
@@ -33,6 +34,8 @@ python3 -m http.server 8000
 - Houd pull requests klein en per onderwerp (bv. één sectie of één pagina) om merge-conflicten te voorkomen.
 - Header en footer staan in elke pagina; pas ze bij een wijziging in alle vier aan. Submappen gebruiken `../assets/...`.
 - Opmaak volgens `.editorconfig` (2 spaties, UTF-8, LF).
+- **Ontwerp:** volg `DESIGN.md`. Geen losse hex-kleuren buiten `:root`, geen nieuwe lettertypes, en bouw nieuwe secties uit de bestaande componenten (`card`, `service-row`, `bento`, `split`, `cta`).
+- **Animaties via attributen:** `data-reveal` (infaden), `data-stagger` (kinderen na elkaar), `data-split` (kop woord voor woord; `data-split="hero"` start direct), `data-scroll-reveal` (woorden lichten op tijdens scrollen), `data-magnet` (knop volgt de muis), `data-parallax="0.06"`. Alles respecteert "minder beweging" in het besturingssysteem.
 
 ## Nog te doen
 
@@ -40,3 +43,8 @@ python3 -m http.server 8000
 - [ ] Portretfoto in hogere resolutie (nu 248×248 px)
 - [ ] KvK-nummer, privacyverklaring
 - [ ] Eventueel: echt contactformulier (bv. Formspree), eigen domein
+
+## Credits
+
+Ontworpen met de `web-design` skill (`.claude/skills/web-design`, xiaopu-ai/web-design, MIT).
+Motion effects inspired by [vue-bits](https://github.com/DavidHDev/vue-bits) by DavidHDev (MIT). Lettertypes: Fraunces en DM Sans (Google Fonts, OFL).
