@@ -18,7 +18,8 @@ robots.txt            Werkt pas op een eigen domein (zie opmerking in het bestan
 DESIGN.md             Stijlgids: kleuren, typografie, componenten, animaties, do's & don'ts
 assets/css/style.css  Alle styling – kleuren/fonts als variabelen bovenaan (:root), volgens DESIGN.md
 assets/js/main.js     Menu, scroll-animaties, spotlight/magneet-effecten, kopieerknop, formulier
-assets/img/           Afbeeldingen en favicon
+assets/img/           Portret en favicon
+assets/img/foto/      Sfeerfoto's (WebP, 800 en 1400 px), zie DESIGN.md §4
 ```
 
 ## Lokaal bekijken
@@ -45,6 +46,7 @@ python3 -m http.server 8000
 
 - [ ] Echt telefoonnummer en e-mailadres (nu `06 12 34 56 78` / `thijs@voorbeeld.nl`, in alle pagina's + `data-mailto` op het contactformulier)
 - [ ] Portretfoto in hogere resolutie (nu 248×248 px)
+- [ ] Herkomst en licentie van de sfeerfoto's (`assets/img/foto/`) vastleggen
 - [ ] KvK-nummer
 - [ ] Privacyverklaring (`privacy/`) laten controleren: het is een concept op basis van hoe de site nu werkt (formulier via mailprogramma, geen cookies, GitHub Pages en Google Fonts)
 - [ ] Eventueel: echt contactformulier (bv. Formspree), eigen domein

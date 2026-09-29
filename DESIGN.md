@@ -183,6 +183,19 @@ Geordende lijst (`<ol>`) met kaarten als rij: cijfer, titel, tekst. Elke volgend
 ### Stappen (`.expect`, Contact "Wat je kunt verwachten")
 Verticale stappen met een donkere cirkel met cijfer en een dunne verbindingslijn die bij de laatste stap stopt. Naast een sticky kop (`.split`).
 
+### Sfeerfoto's (`.photo`)
+`<figure class="photo">` met afgeronde hoeken (`--radius-lg`), `--shadow-sm`, een haarlijn van 6% inkt aan de binnenkant en een rustige zoom (1.035) bij hover. Bestanden in `assets/img/foto/` als WebP (800 px en 1400 px breed, `srcset` + `sizes`, `loading="lazy"`, vaste `width`/`height` tegen verspringen). Alle foto's hebben dezelfde lichte, warme kleurcorrectie zodat ze als één set bij de crèmetinten passen.
+
+| Plek | Foto | Vorm |
+|------|------|------|
+| Home, "Wat ik doe" | `overleg-tablet` | 3:2, onder de dienstenlijst (rechterkolom van `.split`) |
+| Home, "Wat het oplevert" | `teamresultaat` | hoge cel in de bento (rechts, over drie rijen; tablet links over twee rijen; mobiel 5:4 onder de intro) |
+| Aanpak, niveau 1 Organisatie | `analyse` | 16:10, bovenaan de rechterkolom |
+| Aanpak, niveau 2 Teams | `samenwerken` | 16:10, bovenaan de rechterkolom |
+| Aanpak, niveau 3 Individu | `coachgesprek` | 16:10, bovenaan de rechterkolom (uitsnede zonder de Engelse formuliertekst) |
+
+Regels: nooit labels, pillen of bijschriften óp een foto; geen fotocredits als decoratie; elke foto staat maar op één plek; altijd een beschrijvende Nederlandse `alt`.
+
 ### Formulier
 Velden met `--surface` achtergrond, 1px `--border`, radius 14px, min-hoogte 3.25rem. Focus: rand `--accent` + ring `0 0 0 4px rgba(var(--accent-rgb), .15)`. Ongeldig (na interactie): rand `--error`.
 
@@ -279,6 +292,7 @@ JS slaat magnet, parallax en scroll-reveal over bij `prefers-reduced-motion: red
 ### Do
 - Veel witruimte; liever één sterke zin dan drie gemiddelde.
 - Echte foto's van Thijs; portret altijd in de boogvorm of cirkel met zachte schaduw.
+- Sfeerfoto's alleen waar ze de inhoud ondersteunen, in de vaste `.photo`-vorm (zie §4), nooit los tussen secties geplakt.
 - Iconen als inline SVG (lucide-stijl, 1.5px lijn, `currentColor`).
 - Elke interactieve component heeft hover + focus-visible.
 - Teksten in de jij-vorm, kort en concreet, in lijn met "geen dikke rapporten".
