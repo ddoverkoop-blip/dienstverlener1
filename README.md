@@ -58,4 +58,4 @@ python3 -m http.server 8000
 Ontworpen met de `web-design` skill (`.claude/skills/web-design`, xiaopu-ai/web-design, MIT).
 Conversie, SEO en toegankelijkheid verbeterd met `page-cro`, `seo-audit` en `better-accessibility` (`.claude/skills/`, uit [boraoztunc/skills](https://github.com/boraoztunc/skills), MIT).
 Opgeschoond met `taste-skill` en `redesign-skill` (`.claude/skills/`, uit [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill), MIT).
-Motion effects inspired by [vue-bits](https://github.com/DavidHDev/vue-bits) by DavidHDev (MIT). Lettertypes: Fraunces en DM Sans (Google Fonts, OFL).
+Motion effects inspired by [vue-bits](https://github.com/DavidHDev/vue-bits) by DavidHDev (MIT). Lettertypes: Plus Jakarta Sans en DM Sans (Google Fonts, OFL).
