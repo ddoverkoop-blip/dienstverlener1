@@ -69,29 +69,29 @@ Stijlgids voor de site van Thijs van Geenen, *de excellente dienstverlener*. All
 
 **Font Stack:**
 ```css
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..700;1,300..700&family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&display=swap');
 
---font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+--font-display: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
 --font-body: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
 ```
 (In de HTML geladen via `<link rel="preconnect">` + `<link rel="stylesheet">` voor snelheid.)
 
 | Role | Font | Size | Weight | Line Height | Letter Spacing |
 |------|------|------|--------|-------------|----------------|
-| Hero H1 | Fraunces (opsz 144) | clamp(3rem, 7.2vw, 6.5rem) | 350 | 1.02 | -0.035em |
-| Page H1 | Fraunces | clamp(2.6rem, 5.6vw, 5rem) | 350 | 1.05 | -0.03em |
-| Section H2 | Fraunces | clamp(2.1rem, 4.2vw, 3.6rem) | 350 | 1.08 | -0.025em |
-| H3 | Fraunces | 1.5rem | 450 | 1.2 | -0.01em |
+| Hero H1 | Plus Jakarta Sans | clamp(3rem, 7.2vw, 6.5rem) | 450 | 1.02 | -0.035em |
+| Page H1 | Plus Jakarta Sans | clamp(2.6rem, 5.6vw, 5rem) | 450 | 1.05 | -0.03em |
+| Section H2 | Plus Jakarta Sans | clamp(2.1rem, 4.2vw, 3.6rem) | 450 | 1.08 | -0.025em |
+| H3 | Plus Jakarta Sans | 1.5rem | 450 | 1.2 | -0.01em |
 | Body | DM Sans | 1.0625rem | 400 | 1.7 | — |
 | Lead | DM Sans | 1.25rem | 400 | 1.6 | — |
 | Label / Eyebrow | DM Sans | 0.98rem | 600 | 1.4 | normaal, gewone zinsopbouw (geen hoofdletters) |
-| Grote cijfers | Fraunces italic | 5–7rem | 300 | 1 | -0.04em |
+| Grote cijfers | Plus Jakarta Sans italic | 5–7rem | 400 | 1 | -0.04em |
 
 **Typography Rules:**
-- Koppen licht (300–450) en groot: luxe komt van schaal en lucht, niet van vet.
+- Koppen licht tot middel (400–450) en groot: luxe komt van schaal en lucht, niet van vet.
 - Eén cursief koperen kernwoord (`<em>`) per pagina, alleen in de H1. Sectiekoppen (H2) blijven recht. Op home heeft het citaat daarnaast één accent.
 - Lopende tekst max. 65 tekens breed (`max-width: 36rem`).
-- **NEVER use**: Inter, Roboto, Arial, Poppins, Montserrat, Comic Sans; geen tweede serif.
+- **NEVER use**: Inter, Roboto, Arial, Poppins, Montserrat, Comic Sans; geen Fraunces of andere sierlijke serif (klant vond de cursief onrustig).
 
 **Text Decoration** (uit `text-decoration-rules.md`, stijl = warm/redactioneel):
 - Hero H1: geen verloop, geen schaduw; alleen italic koper op het kernwoord.
@@ -172,10 +172,10 @@ Stijlgids voor de site van Thijs van Geenen, *de excellente dienstverlener*. All
 Gewone zin in plaats van een pil met statusbolletje. Voorbeeld in de hero: "Adviseur, trainer, projectleider en coach uit Nuenen".
 
 ### Dienstenlijst (service rows)
-Rijen met Fraunces-titel, omschrijving en pijl, zonder nummering. Hover: vlak `--surface` schuift van links in (`transform: scaleX`), pijl draait 45°.
+Rijen met koptitel, omschrijving en pijl, zonder nummering. Hover: vlak `--surface` schuift van links in (`transform: scaleX`), pijl draait 45°.
 
 ### Zigzag (`.pains`, home "Herken je dit?")
-Drie blokken zonder kaart: grote Fraunces-titel met een dunne lijn erboven. Links, rechts (verticaal gecentreerd), links (iets ingesprongen). Mobiel: gewone kolom.
+Drie blokken zonder kaart: grote koptitel met een dunne lijn erboven. Links, rechts (verticaal gecentreerd), links (iets ingesprongen). Mobiel: gewone kolom.
 
 ### Trap (`.pillars`, Over Thijs "Drie fundamenten")
 Geordende lijst (`<ol>`) met kaarten als rij: cijfer, titel, tekst. Elke volgende rij springt verder in, omdat de fundamenten op elkaar voortbouwen. Mobiel: geen inspringing.
@@ -291,7 +291,7 @@ JS slaat magnet, parallax en scroll-reveal over bij `prefers-reduced-motion: red
 - ❌ Geen stockfoto's van handenschuddende zakenmensen.
 - ❌ Geen verzonnen cijfers, logo's of testimonials: alleen echte gegevens.
 - ❌ Geen `filter: blur()` op bewegende elementen of meer dan één donkere sectie direct na elkaar.
-- ❌ Geen vette (700+) Fraunces-koppen; de luxe zit in lichte, grote letters.
+- ❌ Geen vette (700+) koppen; de luxe zit in lichte, grote letters.
 - ❌ Geen drie (of meer) gelijke kaarten naast elkaar; kies zigzag, trap, verticale stappen, bento of split.
 - ❌ Geen extra animatiebibliotheken (GSAP/Lenis) zonder dat een pin-scrub echt nodig is.
 - ❌ Geen tekst smaller dan 44px aanraakdoel op mobiel.
